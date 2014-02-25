@@ -10,6 +10,7 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.js"></script>
 	<link rel="stylesheet" type="text/css" href="includes/css/kresge.css">
 	<script type="text/javascript" src="includes/js/bootstrap.js"></script>
+	<script type="text/javascript" href="includes/js/kresge.js"></script>
 </head>
 <body>
 <div class="container-fluid">
@@ -22,8 +23,8 @@
 		</div>
 		<div class="form-group">
 			<div class="btn-group-vertical btn-group-lg">
-				<button type="button" class="btn btn-default text-left">Lookup by Course</button>
-				<button type="button" class="btn btn-default text-left">Lookup by Faculty/Staff</button>
+				<button type="button" class="btn btn-default text-left" data-toggle="modal" data-target=".bs-class-modal-lg">Lookup by Course</button>
+				<button type="button" class="btn btn-default text-left" data-toggle="modal" data-target=".bs-prof-modal-lg">Lookup by Faculty/Staff</button>
 			</div>
 		</div>
 		<h2>Destination</h2>
@@ -33,8 +34,8 @@
 		</div>
 		<div class="form-group">
 			<div class="btn-group-vertical btn-group-lg">
-				<button type="button" class="btn btn-default text-left">Lookup by Course</button>
-				<button type="button" class="btn btn-default text-left">Lookup by Faculty/Staff</button>
+				<button type="button" class="btn btn-default text-left" data-toggle="modal" data-target=".bs-class-modal-lg">Lookup by Course</button>
+				<button type="button" class="btn btn-default text-left" data-toggle="modal" data-target=".bs-prof-modal-lg">Lookup by Faculty/Staff</button>
 			</div>
 		</div>
 		<div class="form-group text-center">
@@ -43,34 +44,27 @@
 	</form>
 </div>
 
-<button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">By class</button>
-
-<button class="btn btn-primary" data-toggle="modal" data-target=".bs-prof-modal-lg">By prof</button>
 <div class="modal fade bs-class-modal-lg" tabindex="-1" role="dialog" aria-labelledby="MyLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
     	<div class="modal-header">Choose Class </div>
     	<div class="modal-body">
-     		<div class="dropdown">
-	      		<div id="subjectDrop" class="dropdown-toggle" data-toggle="dropdown"><b style="font-weight:bold;font-size:15px" id="chosenClass">Subject </b><b class="caret"></b></div>
-	 	 		<ul class="dropdown-menu" role="menu" aria-labelledby="subjectDrop">
-		 	 		<li class="active">English</li>
-		 	 		<li class="active">German</li>
-		 	 		<li class="active">Spanish</li>
-		 	 		<li class="active">Swahili</li>
-		   		</ul>
-		   	</div>
-	   		<div class="dropdown">
-	      		<div id="numberDrop" class="dropdown-toggle" data-toggle="dropdown"><b style="font-weight:bold;font-size:15px" id="chosenClass">Number </b><b class="caret"></b></div>
-	 	 		<ul class="dropdown-menu" role="menu" aria-labelledby="numberDrop">
-		 	 		<li class="active">110 (Robinson) 1pm</li>
-		 	 		<li class="active">210 (Martinze) 10am</li>
-		 	 		<li class="active">210 (Roberts) 10am</li>
-		 	 		<li class="active">301 (Yantes) 3pm</li>
-		   		</ul>
+		   		<div class="classDropdown"><select >
+		   			<option value="English">English</option>
+		   			<option value="German">German</option>
+		   			<option value="Spanish">Spanish</option>
+		   			<option value="Swahili">Swahili</option>
+		   		</select></div>
+		   		<div class="classDropdown">
+	   			<select >
+		   			<option value="101 (Martinez) 10am">101 (Martinez) 10am</option>
+		   			<option value="102 (Martinez) 2pm">102 (Martinez) 2pm</option>
+		   			<option value="210 (Rodriguez) 1pm">210 (Rodriguez) 1pm</option>
+		   			<option value="301 (Yantes) 12pm">301 (Yantes) 12pm</option>
+		   		</select></div>
 	   		</div>
 	   	<div class="modal-footer">
-	   		<button>OK</button>
+	   		<button id="classSubmit" data-dismiss="modal">OK</button>
 	   	</div>
       </div>
     </div>
@@ -83,18 +77,18 @@
     	<div class="modal-header">Choose Professor </div>
     	<div class="modal-body">
      		<div class="list-group">
-     			<a href="#" class="list-group-item">Aaron, Hank</a>
-     			<a href="#" class="list-group-item">Abrams, J.J</a>
-     			<a href="#" class="list-group-item">Brown, Alton</a>
-     			<a href="#" class="list-group-item">Brown, Danny</a>
-     			<a href="#" class="list-group-item">Chavez, Cesar</a>
-     			<a href="#" class="list-group-item">Chavez, Hugo</a>
-     			<a href="#" class="list-group-item">Donagy, Phil</a>
-     			<a href="#" class="list-group-item">Elephante, Roberto</a>
-     			<a href="#" class="list-group-item">Friedrich, Leanne</a>
-     			<a href="#" class="list-group-item">Grief, Corey</a>
-     			<a href="#" class="list-group-item">Saxton, Tom</a>
-     			<a href="#" class="list-group-item">Simon, Athulya</a>
+     			<a href="#" class="list-group-item" data-dismiss="modal">Aaron, Hank</a>
+     			<a href="#" class="list-group-item" data-dismiss="modal">Abrams, J.J</a>
+     			<a href="#" class="list-group-item" data-dismiss="modal">Brown, Alton</a>
+     			<a href="#" class="list-group-item" data-dismiss="modal">Brown, Danny</a>
+     			<a href="#" class="list-group-item" data-dismiss="modal">Chavez, Cesar</a>
+     			<a href="#" class="list-group-item" data-dismiss="modal">Chavez, Hugo</a>
+     			<a href="#" class="list-group-item" data-dismiss="modal">Donagy, Phil</a>
+     			<a href="#" class="list-group-item" data-dismiss="modal">Elephante, Roberto</a>
+     			<a href="#" class="list-group-item" data-dismiss="modal">Friedrich, Leanne</a>
+     			<a href="#" class="list-group-item" data-dismiss="modal">Grief, Corey</a>
+     			<a href="#" class="list-group-item" data-dismiss="modal">Saxton, Tom</a>
+     			<a href="#" class="list-group-item" data-dismiss="modal">Simon, Athulya</a>
      		</div>
       </div>
     </div>
