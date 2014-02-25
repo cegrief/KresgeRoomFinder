@@ -50,28 +50,60 @@
 	</form>
 </div>
 
-<button class="btn btn-primary" data-toggle="modal" data-target=".bs-by-class-lg">By class</button>
-<div class="modal fade bs-by-class-lg" tabindex="-1" role="dialog" aria-labelledby="ByClass" aria-hidden="true">
+<button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">By class</button>
+
+<button class="btn btn-primary" data-toggle="modal" data-target=".bs-prof-modal-lg">By prof</button>
+<div class="modal fade bs-class-modal-lg" tabindex="-1" role="dialog" aria-labelledby="MyLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
-      <div class="dropdown">
-      	<div id="subjectDrop" class="dropdown-toggle" data-toggle="dropdown">Subject <b class="caret"></b></div>
- 	 	<ul class="dropdown-menu" role="menu" aria-labelledby="subjectDrop">
- 	 		<li class="active">English</li>
- 	 		<li class="active">German</li>
- 	 		<li class="active">Spanish</li>
- 	 		<li class="active">Swahili</li>
-   		</ul>
+    	<div class="modal-header">Choose Class </div>
+    	<div class="modal-body">
+     		<div class="dropdown">
+	      		<div id="subjectDrop" class="dropdown-toggle" data-toggle="dropdown"><b style="font-weight:bold;font-size:15px" id="chosenClass">Subject </b><b class="caret"></b></div>
+	 	 		<ul class="dropdown-menu" role="menu" aria-labelledby="subjectDrop">
+		 	 		<li class="active">English</li>
+		 	 		<li class="active">German</li>
+		 	 		<li class="active">Spanish</li>
+		 	 		<li class="active">Swahili</li>
+		   		</ul>
+		   	</div>
+	   		<div class="dropdown">
+	      		<div id="numberDrop" class="dropdown-toggle" data-toggle="dropdown"><b style="font-weight:bold;font-size:15px" id="chosenClass">Number </b><b class="caret"></b></div>
+	 	 		<ul class="dropdown-menu" role="menu" aria-labelledby="numberDrop">
+		 	 		<li class="active">110 (Robinson) 1pm</li>
+		 	 		<li class="active">210 (Martinze) 10am</li>
+		 	 		<li class="active">210 (Roberts) 10am</li>
+		 	 		<li class="active">301 (Yantes) 3pm</li>
+		   		</ul>
+	   		</div>
+	   	<div class="modal-footer">
+	   		<button>OK</button>
+	   	</div>
       </div>
-<!--       <div class="dropdown">
-      	<span style="color:blue;font-weight:bold">Number</span>
-      	<span id="numberDrop" class="dropdown-toggle" data-toggle="dropdown">Number </span>
-      	<b class="caret"></b>
-      	<ul class="dropdown-menu" role="menu" aria-labelledby="numberDrop">
-      		<li class="active">110 (Robinson) 1pm</li>
-      		<li class="active">210 (Martinez) 10pm</li>
-      	</ul>
-      </div> -->
+    </div>
+  </div>
+</div>
+
+<div class="modal fade bs-prof-modal-lg" tabindex="-1" role="dialog" aria-labelledby="MyLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+    	<div class="modal-header">Choose Professor </div>
+    	<div class="modal-body">
+     		<div class="list-group">
+     			<a href="#" class="list-group-item">Aaron, Hank</a>
+     			<a href="#" class="list-group-item">Abrams, J.J</a>
+     			<a href="#" class="list-group-item">Brown, Alton</a>
+     			<a href="#" class="list-group-item">Brown, Danny</a>
+     			<a href="#" class="list-group-item">Chavez, Cesar</a>
+     			<a href="#" class="list-group-item">Chavez, Hugo</a>
+     			<a href="#" class="list-group-item">Donagy, Phil</a>
+     			<a href="#" class="list-group-item">Elephante, Roberto</a>
+     			<a href="#" class="list-group-item">Friedrich, Leanne</a>
+     			<a href="#" class="list-group-item">Grief, Corey</a>
+     			<a href="#" class="list-group-item">Saxton, Tom</a>
+     			<a href="#" class="list-group-item">Simon, Athulya</a>
+     		</div>
+      </div>
     </div>
   </div>
 </div>
