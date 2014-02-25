@@ -12,7 +12,7 @@ button.text-left{
 }
 
 .prof{
-	height:30px;
+	height:10%;
 	background:box-shadow: 0px 6px 3px -2px rgba(240,240,240,0.8);
 }
 
@@ -22,4 +22,8 @@ button.text-left{
 
 #numberDrop{
 	height:40%;
+}
+
+.classDropdown{
+	height:30%;
 }

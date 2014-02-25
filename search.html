@@ -7,6 +7,7 @@
 	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.js"></script>
 	<link rel="stylesheet" type="text/css" href="includes/css/kresge.css">
 	<script type="text/javascript" src="includes/js/bootstrap.js"></script>
+	<script type="text/javascript" href="includes/js/kresge.js"></script>
 </head>
 <body>
 <div class="container-fluid">
@@ -50,31 +51,28 @@
 	</form>
 </div>
 
-<button class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">By class</button>
+<button class="btn btn-primary" data-toggle="modal" data-target=".bs-class-modal-lg">By class</button>
 
 <button class="btn btn-primary" data-toggle="modal" data-target=".bs-prof-modal-lg">By prof</button>
+
 <div class="modal fade bs-class-modal-lg" tabindex="-1" role="dialog" aria-labelledby="MyLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
     	<div class="modal-header">Choose Class </div>
     	<div class="modal-body">
-     		<div class="dropdown">
-	      		<div id="subjectDrop" class="dropdown-toggle" data-toggle="dropdown"><b style="font-weight:bold;font-size:15px" id="chosenClass">Subject </b><b class="caret"></b></div>
-	 	 		<ul class="dropdown-menu" role="menu" aria-labelledby="subjectDrop">
-		 	 		<li class="active">English</li>
-		 	 		<li class="active">German</li>
-		 	 		<li class="active">Spanish</li>
-		 	 		<li class="active">Swahili</li>
-		   		</ul>
-		   	</div>
-	   		<div class="dropdown">
-	      		<div id="numberDrop" class="dropdown-toggle" data-toggle="dropdown"><b style="font-weight:bold;font-size:15px" id="chosenClass">Number </b><b class="caret"></b></div>
-	 	 		<ul class="dropdown-menu" role="menu" aria-labelledby="numberDrop">
-		 	 		<li class="active">110 (Robinson) 1pm</li>
-		 	 		<li class="active">210 (Martinze) 10am</li>
-		 	 		<li class="active">210 (Roberts) 10am</li>
-		 	 		<li class="active">301 (Yantes) 3pm</li>
-		   		</ul>
+		   		<div><select class="classDropdown">
+		   			<option value="English">English</option>
+		   			<option value="German">German</option>
+		   			<option value="Spanish">Spanish</option>
+		   			<option value="Swahili">Swahili</option>
+		   		</select></div>
+		   		<div>
+	   			<select class="classDropdown">
+		   			<option value="101 (Martinez) 10am">101 (Martinez) 10am</option>
+		   			<option value="102 (Martinez) 2pm">102 (Martinez) 2pm</option>
+		   			<option value="210 (Rodriguez) 1pm">210 (Rodriguez) 1pm</option>
+		   			<option value="301 (Yantes) 12pm">301 (Yantes) 12pm</option>
+		   		</select></div>
 	   		</div>
 	   	<div class="modal-footer">
 	   		<button>OK</button>
