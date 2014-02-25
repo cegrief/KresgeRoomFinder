@@ -7,8 +7,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="includes/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="includes/css/bootstrap-theme.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-2.1.0.js"></script>
 	<link rel="stylesheet" type="text/css" href="includes/css/kresge.css">
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<script type="text/javascript" src="includes/js/bootstrap.js"></script>
 </head>
 <body>
@@ -42,5 +42,32 @@
 		</div>
 	</form>
 </div>
+
+<button class="btn btn-primary" data-toggle="modal" data-target=".bs-by-class-lg">By class</button>
+<div class="modal fade bs-by-class-lg" tabindex="-1" role="dialog" aria-labelledby="ByClass" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="dropdown">
+      	<div id="subjectDrop" class="dropdown-toggle" data-toggle="dropdown">Subject <b class="caret"></b></div>
+ 	 	<ul class="dropdown-menu" role="menu" aria-labelledby="subjectDrop">
+ 	 		<li class="active">English</li>
+ 	 		<li class="active">German</li>
+ 	 		<li class="active">Spanish</li>
+ 	 		<li class="active">Swahili</li>
+   		</ul>
+      </div>
+<!--       <div class="dropdown">
+      	<span style="color:blue;font-weight:bold">Number</span>
+      	<span id="numberDrop" class="dropdown-toggle" data-toggle="dropdown">Number </span>
+      	<b class="caret"></b>
+      	<ul class="dropdown-menu" role="menu" aria-labelledby="numberDrop">
+      		<li class="active">110 (Robinson) 1pm</li>
+      		<li class="active">210 (Martinez) 10pm</li>
+      	</ul>
+      </div> -->
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
