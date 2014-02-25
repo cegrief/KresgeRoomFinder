@@ -23,10 +23,10 @@
 		<div class="form-group">
 			<label class="col-sm-2 control-label">Lookup</label>
 			<div class="btn-group-vertical btn-group-lg col-sm-10">
-				<button type="button" class="btn btn-default text-left">
+				<button type="button" class="btn btn-default text-left" data-toggle="modal" data-target=".bs-class-modal-lg">
 					By Course
 				</button>
-				<button type="button" class="btn btn-default text-left">By Faculty/Staff</button>
+				<button type="button" class="btn btn-default text-left" data-toggle="modal" data-target=".bs-prof-modal-lg">By Faculty/Staff</button>
 			</div>
 		</div>
 		<h2>Destination</h2>
@@ -39,10 +39,10 @@
 		<div class="form-group">
 			<label class="col-sm-2 control-label">Lookup</label>
 			<div class="btn-group-vertical btn-group-lg col-sm-10">
-				<button type="button" class="btn btn-default text-left">
+				<button type="button" class="btn btn-default text-left" data-toggle="modal" data-target=".bs-class-modal-lg">
 					By Course
 				</button>
-				<button type="button" class="btn btn-default text-left">By Faculty/Staff</button>
+				<button type="button" class="btn btn-default text-left" data-toggle="modal" data-target=".bs-prof-modal-lg">By Faculty/Staff</button>
 			</div>
 		</div>
 		<div class="form-group col-sm-12 text-center">
@@ -51,23 +51,19 @@
 	</form>
 </div>
 
-<button class="btn btn-primary" data-toggle="modal" data-target=".bs-class-modal-lg">By class</button>
-
-<button class="btn btn-primary" data-toggle="modal" data-target=".bs-prof-modal-lg">By prof</button>
-
 <div class="modal fade bs-class-modal-lg" tabindex="-1" role="dialog" aria-labelledby="MyLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
     	<div class="modal-header">Choose Class </div>
     	<div class="modal-body">
-		   		<div><select class="classDropdown">
+		   		<div class="classDropdown"><select >
 		   			<option value="English">English</option>
 		   			<option value="German">German</option>
 		   			<option value="Spanish">Spanish</option>
 		   			<option value="Swahili">Swahili</option>
 		   		</select></div>
-		   		<div>
-	   			<select class="classDropdown">
+		   		<div class="classDropdown">
+	   			<select >
 		   			<option value="101 (Martinez) 10am">101 (Martinez) 10am</option>
 		   			<option value="102 (Martinez) 2pm">102 (Martinez) 2pm</option>
 		   			<option value="210 (Rodriguez) 1pm">210 (Rodriguez) 1pm</option>
@@ -75,7 +71,7 @@
 		   		</select></div>
 	   		</div>
 	   	<div class="modal-footer">
-	   		<button>OK</button>
+	   		<button id="classSubmit" data-dismiss="modal">OK</button>
 	   	</div>
       </div>
     </div>
@@ -88,18 +84,18 @@
     	<div class="modal-header">Choose Professor </div>
     	<div class="modal-body">
      		<div class="list-group">
-     			<a href="#" class="list-group-item">Aaron, Hank</a>
-     			<a href="#" class="list-group-item">Abrams, J.J</a>
-     			<a href="#" class="list-group-item">Brown, Alton</a>
-     			<a href="#" class="list-group-item">Brown, Danny</a>
-     			<a href="#" class="list-group-item">Chavez, Cesar</a>
-     			<a href="#" class="list-group-item">Chavez, Hugo</a>
-     			<a href="#" class="list-group-item">Donagy, Phil</a>
-     			<a href="#" class="list-group-item">Elephante, Roberto</a>
-     			<a href="#" class="list-group-item">Friedrich, Leanne</a>
-     			<a href="#" class="list-group-item">Grief, Corey</a>
-     			<a href="#" class="list-group-item">Saxton, Tom</a>
-     			<a href="#" class="list-group-item">Simon, Athulya</a>
+     			<a href="#" class="list-group-item" data-dismiss="modal">Aaron, Hank</a>
+     			<a href="#" class="list-group-item" data-dismiss="modal">Abrams, J.J</a>
+     			<a href="#" class="list-group-item" data-dismiss="modal">Brown, Alton</a>
+     			<a href="#" class="list-group-item" data-dismiss="modal">Brown, Danny</a>
+     			<a href="#" class="list-group-item" data-dismiss="modal">Chavez, Cesar</a>
+     			<a href="#" class="list-group-item" data-dismiss="modal">Chavez, Hugo</a>
+     			<a href="#" class="list-group-item" data-dismiss="modal">Donagy, Phil</a>
+     			<a href="#" class="list-group-item" data-dismiss="modal">Elephante, Roberto</a>
+     			<a href="#" class="list-group-item" data-dismiss="modal">Friedrich, Leanne</a>
+     			<a href="#" class="list-group-item" data-dismiss="modal">Grief, Corey</a>
+     			<a href="#" class="list-group-item" data-dismiss="modal">Saxton, Tom</a>
+     			<a href="#" class="list-group-item" data-dismiss="modal">Simon, Athulya</a>
      		</div>
       </div>
     </div>
