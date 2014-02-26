@@ -36,3 +36,13 @@ button.text-left{
 .classDropdown{
 	height:40px;
 }
+
+#map{
+	background: url(../img/floor1.bmp) no-repeat;
+	background-size: contain;
+	width: 640px;
+	height: 900px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+}
+
