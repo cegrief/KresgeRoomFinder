@@ -1,11 +1,17 @@
 function resizeMap(){
 	canvas = $('#map');
+	if(canvas == []){
+		return;
+	}
 	canvas.width(window.innerWidth);
 	canvas.height(window.innerHeight-147);
 };
 
 function drawRoomToRoom(){
 	var c = document.getElementById("map");
+	if(c==null){
+		return;
+	}
 	var ctx = c.getContext("2d");
 	ctx.strokeStyle="#FF0000";
 	ctx.beginPath();
@@ -29,7 +35,7 @@ function drawRoomToRoom(){
 	
 	drawRoomToRoom();
 	resizeMap();
-
 	window.addEventListener('resize', resizeMap, false); // will resize map canvas when window size changes
+
 
  });
