@@ -24,11 +24,11 @@
 
 <div class="container-fluid">
 
-	<form class="form" role="form">
+	<form class="form" role="form" action="index.html" method="GET">
 		<h2>Starting Location</h2>
 		<div class="form-group">
 			<label for="startingroom" class="control-label">Room Number</label>
-			<input type="text" placeholder="0-000" class="form-control" id="startingroom" name="startingroom"/>
+			<input type="text" placeholder="0-000" class="form-control" id="startingroom" tabindex="1" name="startingroom"/>
 		</div>
 		<div class="form-group">
 			<div class="btn-group-vertical btn-group-lg">
@@ -39,7 +39,7 @@
 		<h2>Destination</h2>
 		<div class="form-group">
 			<label for="endingroom" class="control-label">Room Number</label>
-			<input type="text" placeholder="0-000" class="form-control" id="endingroom" name="endingroom"/>
+			<input type="text" placeholder="0-000" class="form-control" id="endingroom" tabindex="2" name="endingroom"/>
 		</div>
 		<div class="form-group">
 			<div class="btn-group-vertical btn-group-lg">
@@ -48,7 +48,7 @@
 			</div>
 		</div>
 		<div class="form-group text-center">
-			<button type="button" class="btn btn-default btn-lg" id="getDir">Get Directions</button>
+			<button type="submit" class="btn btn-default btn-lg" tabindex="3" id="getDir">Get Directions</button>
 		</div>
 	</form>
 </div>
