@@ -120,6 +120,14 @@ function selectFloor(floor){
 	resizeMap();
 }
 
+function clearCanvas(){
+	var c = document.getElementById("map");
+	if(c==null){
+		return;
+	}
+	c.width=c.width;
+}
+
  $(document).ready(function() {
  	$('.subject').click(function(){
  		var output = $(this).html();
@@ -141,9 +149,24 @@ function selectFloor(floor){
  				drawStairsToRoom(startingFloor);
  			}
 			else{
-				var c = document.getElementById("map");
-				c.width = c.width; // clears prior drawings
+				clearCanvas();
 			}
+ 		}
+ 		else if(startingFloor != 0){
+ 			if(floor == startingFloor){
+ 				drawStartPoint();
+ 			}
+			else{
+				clearCanvas();
+			}
+ 		}
+ 		else if(goalFloor != 0){
+ 			if(floor == goalFloor){
+ 				drawEndPoint();
+ 			}
+ 			else{
+ 				clearCanvas();
+ 			}
  		}
  	});
 
