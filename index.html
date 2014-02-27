@@ -19,10 +19,10 @@
 			<div class="navbar-header">
 				<a class="navbar-brand" href="#">Kresge</a>
 				<span class="navbar-text">floor:</span>
-				<button type="button" class="btn btn-link navbar-btn">1</button>
-				<button type="button" class="btn btn-primary navbar-btn active">2</button>
-				<button type="button" class="btn btn-link navbar-btn">3</button>
-				<button type="button" class="btn btn-link navbar-btn">4</button>
+				<button id = "floor1" type="button" class="btn btn-primary navbar-btn active floor currFloor">1</button>
+				<button id = "floor2" type="button" class="btn btn-link navbar-btn floor">2</button>
+				<button id = "floor3" type="button" class="btn btn-link navbar-btn floor" >3</button>
+				<button id = "floor4" type="button" class="btn btn-link navbar-btn floor" >4</button>
 			</div>
 		</div>
 	</nav>
@@ -31,15 +31,21 @@
 </canvas>
 	<nav class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
 	  <div class="container-fluid">
-	    <!-- Brand and toggle get grouped for better mobile display -->
 	    <div class="navbar-header">
 	      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
 	        <span class="sr-only">Toggle navigation</span>
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
 	        <span class="icon-bar"></span>
+
 	      </button>
-	      <a class="navbar-brand" href="#">bot</a>
+	      <div>
+	      	<a class="navbar-brand" href="search.html"> <span class="glyphicon glyphicon-search"></span> Search </a>
+          	<button type="button" class="btn btn-link navbar-btn iconButt" id="Fbath"></button>
+			<button type="button" class="btn btn-link navbar-btn iconButt" id="Mbath"></button>
+			<button type="button" class="btn btn-link navbar-btn iconButt" id="exit" ></button>
+			<button type="button" class="btn btn-link navbar-btn iconButt" id="water"></button>
+	  	  </div>
 	    </div>
 	</nav>
 </body>
