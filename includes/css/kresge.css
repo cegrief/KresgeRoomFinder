@@ -48,10 +48,16 @@ button.text-left{
 
 #navbar-title{
 	float:right;
-	style="color:white";
 }
 
 #getDir{
 	background:#A8F7A8;
+}
+
+#Fbath{
+	background: url(../img/icon_5) no-repeat;
+	background-size:contain;
+	width:40px;
+	height:40px;
 }
 
