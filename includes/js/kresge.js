@@ -22,10 +22,10 @@ function drawRoomToRoom(){
 	ctx.beginPath();
 	ctx.lineCap="round";
 	ctx.lineWidth=10;
-	ctx.moveTo(80,456);
-	ctx.lineTo(525,456);
-	ctx.lineTo(525,725);
-	ctx.lineTo(545,725);
+	ctx.moveTo(95,456);
+	ctx.lineTo(560,456);
+	ctx.lineTo(560,605);
+	ctx.lineTo(580,605);
 	ctx.stroke();
 
 }
@@ -42,8 +42,8 @@ function drawRoomToStairs(endFloor){
 	ctx.lineCap="round";
 	ctx.lineWidth=10;
 	ctx.moveTo(80,456);
-	ctx.lineTo(100,456);
-	ctx.lineTo(100,579);
+	ctx.lineTo(110,456);
+	ctx.lineTo(110,579);
 	ctx.lineTo(140,579);
 	ctx.stroke();
 	ctx.font="24px Arial";
@@ -62,12 +62,10 @@ function drawStairsToRoom(startFloor){
 	ctx.lineCap="round";
 	ctx.lineWidth=10;
 	ctx.moveTo(140,558);
-	ctx.lineTo(100,558);
-	ctx.lineTo(100,640);
-	ctx.lineTo(208,640);
-	ctx.lineTo(208,815);
-	ctx.lineTo(328,815);
-	ctx.lineTo(328,795);
+	ctx.lineTo(110,558);
+	ctx.lineTo(110,640);
+	ctx.lineTo(318,640);
+	ctx.lineTo(318,620);
 	ctx.stroke();
 	ctx.font="24px Arial";
 	ctx.fillText('From Floor '+startFloor, 150, 579);
