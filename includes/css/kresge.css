@@ -46,3 +46,32 @@ button.text-left{
 	padding-bottom: 1px;
 }
 
+#navbar-title{
+	float:right;
+}
+
+#getDir{
+	background:#A8F7A8;
+}
+
+.iconButt{
+	width:40px;
+	height:40px;
+}
+#Fbath{
+	background: url(../img/icon_5.png) no-repeat;
+		background-size:contain;
+}
+#Mbath{
+	background: url(../img/icon_12313.png) no-repeat;
+		background-size:contain;
+}
+#water{
+	background: url(../img/icon_29.png) no-repeat;
+		background-size:contain;
+}
+#exit{
+	background: url(../img/icon_3729.png) no-repeat;
+		background-size:contain;
+}
+
