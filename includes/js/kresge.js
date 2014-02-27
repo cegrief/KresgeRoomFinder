@@ -93,7 +93,7 @@ function drawStairsToRoom(startFloor){
  	});
 
  	$(".iconButt").click(function(){
- 		$(this).toggleClass("active btn-link btn-primary navbar-btn");
+ 		$(this).toggleClass("btn-primary");
  	});
 
 	resizeMap();
