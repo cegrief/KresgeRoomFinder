@@ -5,6 +5,8 @@ function resizeMap(){
 	}
 	canvas.width(window.innerWidth);
 	canvas.height(window.innerHeight-147);
+	console.log(canvas.width())
+	console.log(canvas.height())
 };
 
 function drawRoomToRoom(){
@@ -37,13 +39,9 @@ function drawRoomToRoom(){
  		floor = $(this).text();
  		$(".currFloor").toggleClass("active btn-primary btn-link currFloor");
  		$(this).toggleClass("active btn-primary btn-link currFloor");
- 		$('#map').width(640);
- 		$('#map').height(898);
- 		console.log($('#map').width());
  		$("#map").css("background", "url(includes/img/floor" + floor +".jpg) no-repeat");
 
  		resizeMap();
- 		console.log($('#map').width());
  	});
 
 	drawRoomToRoom();
