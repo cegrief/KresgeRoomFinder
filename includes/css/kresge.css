@@ -38,7 +38,7 @@ button.text-left{
 }
 
 #map{
-	background: url(../img/floor1.bmp) no-repeat;
+	background: url(../img/floor1.jpg) no-repeat;
 	background-size: contain;
 	width: 640px;
 	height: 900px;
@@ -54,10 +54,24 @@ button.text-left{
 	background:#A8F7A8;
 }
 
-#Fbath{
-	background: url(../img/icon_5) no-repeat;
-	background-size:contain;
+.iconButt{
 	width:40px;
 	height:40px;
+}
+#Fbath{
+	background: url(../img/icon_5.png) no-repeat;
+		background-size:contain;
+}
+#Mbath{
+	background: url(../img/icon_12313.png) no-repeat;
+		background-size:contain;
+}
+#water{
+	background: url(../img/icon_29.png) no-repeat;
+		background-size:contain;
+}
+#exit{
+	background: url(../img/icon_3729.png) no-repeat;
+		background-size:contain;
 }
 
