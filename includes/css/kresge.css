@@ -46,3 +46,12 @@ button.text-left{
 	padding-bottom: 1px;
 }
 
+#navbar-title{
+	float:right;
+	style="color:white";
+}
+
+#getDir{
+	background:#A8F7A8;
+}
+
