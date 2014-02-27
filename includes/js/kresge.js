@@ -46,6 +46,10 @@ function drawRoomToRoom(){
  		resizeMap();
  	});
 
+ 	$(".iconButt").click(function(){
+ 		$(this).toggleClass("active btn-link btn-primary navbar-btn");
+ 	});
+
 	drawRoomToRoom();
 	resizeMap();
 	window.addEventListener('resize', resizeMap, false); // will resize map canvas when window size changes
