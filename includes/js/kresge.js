@@ -3,6 +3,7 @@ var classes = new Array(['101 (Smith)', '101 (Jones)', '105 (Henry)'], ['101 (Fr
 var depts = new Array('English', 'German', 'Spanish', 'Swahili');
 var startingFloor = 0;
 var goalFloor = 0;
+var activeSearch = '';
 
 // Global Functions
 function getUrlVars() {
@@ -134,9 +135,43 @@ function clearCanvas(){
 		$("#chosenClass").html(output);
  	});
 
+	$('#startingroom').keyup(function(){
+		$('#startingroom-help').text('');
+	})
+
+	$('#endingroom').keyup(function(){
+		$('#endingroom-help').text('');
+	})
+
+	$('.startingroom-lookup').click(function(){
+		activeSearch = 'startingroom';
+	})
+
+	$('.endingroom-lookup').click(function(){
+		activeSearch = 'endingroom';
+	})
+
  	$("#classSubmit").click(function(){
- 		
+ 		d = $('#dept').val();
+ 		c = $('#classnum').val();
+ 		if(activeSearch== 'startingroom'){
+ 			$('#' + activeSearch).val('2112');
+ 		}
+ 		else{
+ 			$('#' + activeSearch).val('3494');
+ 		}
+ 		$('#' + activeSearch + '-help').text('Room for: ' + d + c);
  	})
+
+	$('.prof').click(function(e){
+		if(activeSearch == 'startingroom'){
+			$('#' + activeSearch).val('2112');
+		}
+		else{
+			$('#' + activeSearch).val('3494');
+		}
+		$('#' + activeSearch + '-help').text("Office of: " + this.text);
+	})
 
  	$(".floor").click(function(){
  		floor = $(this).text();
