@@ -3,6 +3,9 @@ var classes = new Array(['101 (Smith)', '101 (Jones)', '105 (Henry)'], ['101 (Fr
 var depts = new Array('English', 'German', 'Spanish', 'Swahili');
 var startingFloor = 0;
 var goalFloor = 0;
+var activeSearch = '';
+var startError = false;
+var endError = false;
 
 // Global Functions
 function getUrlVars() {
@@ -134,9 +137,105 @@ function clearCanvas(){
 		$("#chosenClass").html(output);
  	});
 
+	$('#startingroom').keyup(function(){
+		$('#startingroom-help').text('');
+		val = $('#startingroom').val();
+		if(isNaN(val) || val>4999){
+			if(val.length != 5 || val[1] != '-' || val[0]>4 || isNaN(val[0]) || isNaN(val[2]) || isNaN(val[3]) || isNaN(val[4])){
+				$('#startingroom-group').addClass('has-error');
+				$('#startingroom-group').removeClass('has-success');
+				$('#startingroom-help').text('Not a valid room number!');
+				startError=true;
+			}
+			else{
+				$('#startingroom-group').addClass('has-success');
+				$('#startingroom-group').removeClass('has-error');
+				$('#startingroom-help').text('');
+				startError=false;
+			}
+		}
+		else if(val.length != 4){
+			$('#startingroom-group').addClass('has-error');
+			$('#startingroom-group').removeClass('has-success');
+			$('#startingroom-help').text('Not a valid room number!');
+			startError=true;
+		}
+		else{
+			$('#startingroom-group').addClass('has-success');
+			$('#startingroom-group').removeClass('has-error');
+			$('#startingroom-help').text('');
+			startError=false;
+		}
+	})
+
+	$('#endingroom').keyup(function(){
+		$('#endingroom-help').text('');
+		val = $('#endingroom').val();
+		if(isNaN(val) || val>4999){
+			if(val.length != 5 || val[1] != '-' || val[0]>4 || isNaN(val[0]) || isNaN(val[2]) || isNaN(val[3]) || isNaN(val[4])){
+				$('#endingroom-group').addClass('has-error');
+				$('#endingroom-group').removeClass('has-success');
+				$('#endingroom-help').text('Not a valid room number!');
+				endError = true;
+			}
+			else{
+				$('#endingroom-group').addClass('has-success');
+				$('#endingroom-group').removeClass('has-error');
+				$('#endingroom-help').text('');
+				endError = false;
+			}
+		}
+		else if(val.length != 4){
+			$('#endingroom-group').addClass('has-error');
+			$('#endingroom-group').removeClass('has-success');
+			$('#endingroom-help').text('Not a valid room number!');
+			endError = true;
+		}
+		else{
+			$('#endingroom-group').addClass('has-success');
+			$('#endingroom-group').removeClass('has-error');
+			$('#endingroom-help').text('');
+			endError = false;
+		}
+	})
+
+	$('.startingroom-lookup').click(function(){
+		activeSearch = 'startingroom';
+	})
+
+	$('.endingroom-lookup').click(function(){
+		activeSearch = 'endingroom';
+	})
+
  	$("#classSubmit").click(function(){
- 		
+ 		d = $('#dept').val();
+ 		c = $('#classnum').val();
+ 		if(activeSearch== 'startingroom'){
+ 			$('#' + activeSearch).val('2112');
+ 		}
+ 		else{
+ 			$('#' + activeSearch).val('3494');
+ 		}
+		$('#' + activeSearch + '-group').addClass('has-success').removeClass('has-error');
+ 		$('#' + activeSearch + '-help').text('Room for: ' + d + c);
  	})
+
+	$('.prof').click(function(e){
+		if(activeSearch == 'startingroom'){
+			$('#' + activeSearch).val('2112');
+		}
+		else{
+			$('#' + activeSearch).val('3494');
+		}
+		$('#' + activeSearch + '-group').addClass('has-success').removeClass('has-error');
+		$('#' + activeSearch + '-help').text("Office of: " + this.text);
+	})
+
+	$('#getDir').click(function(e){
+		if(endError || startError){
+			e.preventDefault();
+		}
+	})
 
  	$(".floor").click(function(){
  		floor = $(this).text();

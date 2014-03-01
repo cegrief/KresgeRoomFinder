@@ -26,25 +26,27 @@
 
 	<form class="form" role="form" action="index.html" method="GET">
 		<h2>Starting Location</h2>
-		<div class="form-group">
+		<div class="form-group" id="startingroom-group">
 			<label for="startingroom" class="control-label">Room Number</label>
 			<input type="text" placeholder="0-000" class="form-control" id="startingroom" tabindex="1" name="startingroom"/>
+			<span class="help-block" id="startingroom-help"></span>
 		</div>
 		<div class="form-group">
 			<div class="btn-group-vertical btn-group-lg">
-				<button type="button" class="btn btn-default text-left" data-toggle="modal" data-target=".bs-class-modal-lg">Lookup by Course</button>
-				<button type="button" class="btn btn-default text-left" data-toggle="modal" data-target=".bs-prof-modal-lg">Lookup by Faculty/Staff</button>
+				<button type="button" class="btn btn-default text-left startingroom-lookup" data-toggle="modal" data-target=".bs-class-modal-lg">Lookup by Course</button>
+				<button type="button" class="btn btn-default text-left startingroom-lookup" data-toggle="modal" data-target=".bs-prof-modal-lg">Lookup by Faculty/Staff</button>
 			</div>
 		</div>
 		<h2>Destination</h2>
-		<div class="form-group">
+		<div class="form-group" id="endingroom-group">
 			<label for="endingroom" class="control-label">Room Number</label>
-			<input type="text" placeholder="0-000" class="form-control" id="endingroom" tabindex="2" name="endingroom"/>
+			<input type="text" placeholder="0-000" class="form-control has-feedback" id="endingroom" tabindex="2" name="endingroom"/>
+			<span class="help-block" id="endingroom-help"></span>
 		</div>
 		<div class="form-group">
 			<div class="btn-group-vertical btn-group-lg">
-				<button type="button" class="btn btn-default text-left" data-toggle="modal" data-target=".bs-class-modal-lg">Lookup by Course</button>
-				<button type="button" class="btn btn-default text-left" data-toggle="modal" data-target=".bs-prof-modal-lg">Lookup by Faculty/Staff</button>
+				<button type="button" class="btn btn-default text-left endingroom-lookup" data-toggle="modal" data-target=".bs-class-modal-lg">Lookup by Course</button>
+				<button type="button" class="btn btn-default text-left endingroom-lookup" data-toggle="modal" data-target=".bs-prof-modal-lg">Lookup by Faculty/Staff</button>
 			</div>
 		</div>
 		<div class="form-group text-center">
@@ -91,18 +93,18 @@
     	<div class="modal-header"><strong>Lookup by Faculty/Staff</strong></div>
     	<div class="modal-body">
      		<div class="list-group">
-     			<a href="#" class="list-group-item" data-dismiss="modal">Aaron, Hank</a>
-     			<a href="#" class="list-group-item" data-dismiss="modal">Abrams, J.J</a>
-     			<a href="#" class="list-group-item" data-dismiss="modal">Brown, Alton</a>
-     			<a href="#" class="list-group-item" data-dismiss="modal">Brown, Danny</a>
-     			<a href="#" class="list-group-item" data-dismiss="modal">Chavez, Cesar</a>
-     			<a href="#" class="list-group-item" data-dismiss="modal">Chavez, Hugo</a>
-     			<a href="#" class="list-group-item" data-dismiss="modal">Donagy, Phil</a>
-     			<a href="#" class="list-group-item" data-dismiss="modal">Elephante, Roberto</a>
-     			<a href="#" class="list-group-item" data-dismiss="modal">Friedrich, Leanne</a>
-     			<a href="#" class="list-group-item" data-dismiss="modal">Grief, Corey</a>
-     			<a href="#" class="list-group-item" data-dismiss="modal">Saxton, Tom</a>
-     			<a href="#" class="list-group-item" data-dismiss="modal">Simon, Athulya</a>
+     			<a href="#" class="list-group-item prof" data-dismiss="modal">Aaron, Hank</a>
+     			<a href="#" class="list-group-item prof" data-dismiss="modal">Abrams, J.J</a>
+     			<a href="#" class="list-group-item prof" data-dismiss="modal">Brown, Alton</a>
+     			<a href="#" class="list-group-item prof" data-dismiss="modal">Brown, Danny</a>
+     			<a href="#" class="list-group-item prof" data-dismiss="modal">Chavez, Cesar</a>
+     			<a href="#" class="list-group-item prof" data-dismiss="modal">Chavez, Hugo</a>
+     			<a href="#" class="list-group-item prof" data-dismiss="modal">Donagy, Phil</a>
+     			<a href="#" class="list-group-item prof" data-dismiss="modal">Elephante, Roberto</a>
+     			<a href="#" class="list-group-item prof" data-dismiss="modal">Friedrich, Leanne</a>
+     			<a href="#" class="list-group-item prof" data-dismiss="modal">Grief, Corey</a>
+     			<a href="#" class="list-group-item prof" data-dismiss="modal">Saxton, Tom</a>
+     			<a href="#" class="list-group-item prof" data-dismiss="modal">Simon, Athulya</a>
      		</div>
       </div>
 	  <div class="modal-footer">
