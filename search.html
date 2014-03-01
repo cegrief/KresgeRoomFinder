@@ -26,7 +26,7 @@
 
 	<form class="form" role="form" action="index.html" method="GET">
 		<h2>Starting Location</h2>
-		<div class="form-group">
+		<div class="form-group" id="startingroom-group">
 			<label for="startingroom" class="control-label">Room Number</label>
 			<input type="text" placeholder="0-000" class="form-control" id="startingroom" tabindex="1" name="startingroom"/>
 			<span class="help-block" id="startingroom-help"></span>
@@ -38,9 +38,9 @@
 			</div>
 		</div>
 		<h2>Destination</h2>
-		<div class="form-group">
+		<div class="form-group" id="endingroom-group">
 			<label for="endingroom" class="control-label">Room Number</label>
-			<input type="text" placeholder="0-000" class="form-control" id="endingroom" tabindex="2" name="endingroom"/>
+			<input type="text" placeholder="0-000" class="form-control has-feedback" id="endingroom" tabindex="2" name="endingroom"/>
 			<span class="help-block" id="endingroom-help"></span>
 		</div>
 		<div class="form-group">
