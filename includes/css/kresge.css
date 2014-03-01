@@ -58,20 +58,37 @@ button.text-left{
 	width:40px;
 	height:40px;
 }
-#Fbath{
+.Fbath{
 	background: url(../img/icon_5.png) no-repeat;
 		background-size:contain;
 }
-#Mbath{
+.Mbath{
 	background: url(../img/icon_12313.png) no-repeat;
 		background-size:contain;
 }
-#water{
+.water{
 	background: url(../img/icon_29.png) no-repeat;
 		background-size:contain;
 }
-#exit{
+.exit{
 	background: url(../img/icon_3729.png) no-repeat;
+		background-size:contain;
+}
+
+.Fbatha{
+	background: url(../img/icon_5-Copy.png) no-repeat;
+		background-size:contain;
+}
+.Mbatha{
+	background: url(../img/icon_12313-Copy.png) no-repeat;
+		background-size:contain;
+}
+.watera{
+	background: url(../img/icon_29-Copy.png) no-repeat;
+		background-size:contain;
+}
+.exita{
+	background: url(../img/icon_3729-Copy.png) no-repeat;
 		background-size:contain;
 }
 

@@ -170,9 +170,45 @@ function clearCanvas(){
  		}
  	});
 
- 	$(".iconButt").click(function(){
- 		$(this).toggleClass("btn-primary");
- 	});
+ 	// $(".iconButt").click(function(){
+ 	// 	// $(this).toggleClass("btn-primary");
+ 	// 	if($(this).is(".Fbath, .Fbatha") ){
+ 	// 		$(this).toggleClass("Fbath Fbatha");
+ 	// 	};
+ 		// if($(this).css('background', 'url(../img/icon_5.png)')){
+   //          $(this).css('background','url(../img/icon_5-Copy.png');
+   //        }
+  
+ 	// });
+
+$(".Fbath").click(function(){
+	$(this).toggleClass("Fbath Fbatha btn-primary");
+});
+
+$(".Fbatha").click(function(){
+	$(this).toggleClass("Fbath Fbatha btn-primary");
+});
+$(".Mbath").click(function(){
+	$(this).toggleClass("Mbath Mbatha btn-primary");
+});
+
+$(".Mbatha").click(function(){
+	$(this).toggleClass("Mbath Mbatha btn-primary");
+});
+$(".water").click(function(){
+	$(this).toggleClass("water watera btn-primary");
+});
+
+$(".watera").click(function(){
+	$(this).toggleClass("water watera btn-primary");
+});
+$(".exit").click(function(){
+	$(this).toggleClass("exit exita btn-primary");
+});
+
+$(".exita").click(function(){
+	$(this).toggleClass("exit exita btn-primary");
+});
 
 	var gets = getUrlVars();
 	if(gets['startingroom'] && gets['endingroom']){
