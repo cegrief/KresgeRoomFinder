@@ -21,8 +21,8 @@ function resizeMap(){
 	if(canvas == []){
 		return;
 	}
-	canvas.width(window.innerWidth);
-	canvas.height(window.innerHeight-147);
+	canvas.width(320);
+	canvas.height(420);
 };
 
 function drawRoomToRoom(){
