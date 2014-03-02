@@ -62,6 +62,8 @@ function drawRoomToStairs(endFloor){
 	ctx.stroke();
 	ctx.font="24px Arial";
 	ctx.fillText('To Floor '+endFloor, 160,579);
+	ctx.font="36px Arial";
+	ctx.fillText('Find the stairs then go to Floor ' + endFloor, 2,40);
 }
 
 function drawStairsToRoom(startFloor){
