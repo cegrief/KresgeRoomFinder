@@ -280,33 +280,39 @@ function clearCanvas(){
   
  	// });
 
-$(".Fbath").click(function(){
-	$(this).toggleClass("Fbath Fbatha btn-primary");
+$(".Fbath").click(function(e){
+	$(this).toggleClass("Fbath Fbatha ");
+	e.stopPropagation();
+	e.preventDefault();
 });
 
-$(".Fbatha").click(function(){
-	$(this).toggleClass("Fbath Fbatha btn-primary");
+$(".Fbatha").click(function(e){
+	e.stopPropagation();
+	$(this).toggleClass("Fbath Fbatha ");
+	e.preventDefault();
 });
-$(".Mbath").click(function(){
-	$(this).toggleClass("Mbath Mbatha btn-primary");
+$(".Mbath").click(function(e){
+	e.preventDefault();
+	$(this).toggleClass("Mbath Mbatha ");
 });
 
-$(".Mbatha").click(function(){
-	$(this).toggleClass("Mbath Mbatha btn-primary");
+$(".Mbatha").click(function(e){
+	e.preventDefault();
+	$(this).toggleClass("Mbath Mbatha ");
 });
 $(".water").click(function(){
-	$(this).toggleClass("water watera btn-primary");
+	$(this).toggleClass("water watera ");
 });
 
 $(".watera").click(function(){
-	$(this).toggleClass("water watera btn-primary");
+	$(this).toggleClass("water watera ");
 });
 $(".exit").click(function(){
-	$(this).toggleClass("exit exita btn-primary");
+	$(this).toggleClass("exit exita ");
 });
 
 $(".exita").click(function(){
-	$(this).toggleClass("exit exita btn-primary");
+	$(this).toggleClass("exit exita ");
 });
 
 	var gets = getUrlVars();
