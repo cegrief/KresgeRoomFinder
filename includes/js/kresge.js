@@ -238,7 +238,7 @@ function clearCanvas(){
  			$('#' + activeSearch).val('3494');
  		}
 		$('#' + activeSearch + '-group').addClass('has-success').removeClass('has-error');
- 		$('#' + activeSearch + '-help').text('Room for: ' + d + c);
+ 		$('#' + activeSearch + '-help').text('Room for: ' + d + ' ' + c);
  	})
 
 	$('.prof').click(function(e){
