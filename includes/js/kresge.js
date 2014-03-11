@@ -25,7 +25,7 @@ var goalFloor = 0;
 var activeSearch = '';
 var startError = false;
 var endError = false;
-
+var clear = false;
 // Global Functions
 function getUrlVars() {
     var vars = {};
@@ -261,40 +261,37 @@ function clearCanvas(){
 	})
 
  	$(".floor").click(function(){
- 		floor = $(this).text();
- 		selectFloor(floor);
- 		if((startingFloor != 0) && (goalFloor != 0)){
- 			if(floor == startingFloor){
- 				if(startingFloor == goalFloor){
- 					drawRoomToRoom();
- 				}
- 				else{
- 					drawRoomToStairs(goalFloor);
- 				}
- 			}
- 			else if(floor == goalFloor){
- 				drawStairsToRoom(startingFloor);
- 			}
-			else{
-				clearCanvas();
+			floor = $(this).text();
+			selectFloor(floor);
+			if(!clear){
+				if((startingFloor != 0) && (goalFloor != 0)){
+					if(floor == startingFloor){
+						drawRoomToStairs(goalFloor);
+					}
+					else if(floor == goalFloor){
+						drawStairsToRoom(startingFloor);
+					}
+					else{
+						clearCanvas();
+					}
+				}
+				else if(startingFloor != 0){
+					if(floor == startingFloor){
+						drawStartPoint();
+					}
+					else{
+						clearCanvas();
+					}
+				}
+				else if(goalFloor != 0){
+					if(floor == goalFloor){
+						drawEndPoint();
+					}
+					else{
+						clearCanvas();
+					}
+				}
 			}
- 		}
- 		else if(startingFloor != 0){
- 			if(floor == startingFloor){
- 				drawStartPoint();
- 			}
-			else{
-				clearCanvas();
-			}
- 		}
- 		else if(goalFloor != 0){
- 			if(floor == goalFloor){
- 				drawEndPoint();
- 			}
- 			else{
- 				clearCanvas();
- 			}
- 		}
  	});
 
  	// $(".iconButt").click(function(){
@@ -404,4 +401,7 @@ $(".exita").click(function(){
 
  });
 
-
+ function setClear(){
+ clear = true;
+ clearCanvas();
+}
