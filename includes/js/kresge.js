@@ -255,7 +255,9 @@ function clearCanvas(){
 	$('#getDir').click(function(e){
 		if(endError || startError){
 			e.preventDefault();
+			console.log("gross");
 		}
+		console.log("hi");
 	})
 
  	$(".floor").click(function(){
