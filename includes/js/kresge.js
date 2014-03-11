@@ -263,7 +263,12 @@ function clearCanvas(){
  		selectFloor(floor);
  		if((startingFloor != 0) && (goalFloor != 0)){
  			if(floor == startingFloor){
- 				drawRoomToStairs(goalFloor);
+ 				if(startingFloor == goalFloor){
+ 					drawRoomToRoom();
+ 				}
+ 				else{
+ 					drawRoomToStairs(goalFloor);
+ 				}
  			}
  			else if(floor == goalFloor){
  				drawStairsToRoom(startingFloor);
