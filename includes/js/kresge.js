@@ -51,7 +51,7 @@ function drawRoomToRoom(){
 	}
 	c.width = c.width; // clears prior drawings
 	var ctx = c.getContext("2d");
-	ctx.strokeStyle="#FF0000";
+	ctx.strokeStyle="#0000FF";
 	ctx.beginPath();
 	ctx.lineCap="round";
 	ctx.lineWidth=10;
@@ -70,7 +70,7 @@ function drawRoomToStairs(endFloor){
 	}
 	c.width = c.width; // clears prior drawings
 	var ctx = c.getContext("2d");
-	ctx.strokeStyle="#FF0000";
+	ctx.strokeStyle="#0000FF";
 	ctx.beginPath();
 	ctx.lineCap="round";
 	ctx.lineWidth=10;
@@ -92,7 +92,7 @@ function drawStairsToRoom(startFloor){
 	}
 	c.width = c.width; // clears prior drawings
 	var ctx = c.getContext("2d");
-	ctx.strokeStyle="#FF0000";
+	ctx.strokeStyle="#0000FF";
 	ctx.beginPath();
 	ctx.lineCap="round";
 	ctx.lineWidth=10;
@@ -113,7 +113,7 @@ function drawStartPoint(){
 	}
 	c.width = c.width;
 	var ctx = c.getContext("2d");
-	ctx.strokeStyle="#FF0000";
+	ctx.strokeStyle="#0000FF";
 	ctx.beginPath();
 	ctx.lineCap="round";
 	ctx.lineWidth=20;
@@ -129,7 +129,7 @@ function drawEndPoint(){
 	}
 	c.width = c.width;
 	var ctx = c.getContext("2d");
-	ctx.strokeStyle="#FF0000";
+	ctx.strokeStyle="#0000FF";
 	ctx.beginPath();
 	ctx.lineCap="round";
 	ctx.lineWidth=20;
@@ -265,7 +265,12 @@ function clearCanvas(){
  		selectFloor(floor);
  		if((startingFloor != 0) && (goalFloor != 0)){
  			if(floor == startingFloor){
- 				drawRoomToStairs(goalFloor);
+ 				if(startingFloor == goalFloor){
+ 					drawRoomToRoom();
+ 				}
+ 				else{
+ 					drawRoomToStairs(goalFloor);
+ 				}
  			}
  			else if(floor == goalFloor){
  				drawStairsToRoom(startingFloor);
