@@ -55,12 +55,21 @@ function drawRoomToRoom(){
 	ctx.beginPath();
 	ctx.lineCap="round";
 	ctx.lineWidth=10;
-	ctx.moveTo(95,456);
+	ctx.moveTo(80,456);
 	ctx.lineTo(560,456);
 	ctx.lineTo(560,605);
 	ctx.lineTo(580,605);
 	ctx.stroke();
-
+	base_image = new Image();
+	base_image.src = 'includes/img/icon_pin_a.png';
+	base_image.onload = function(){
+		ctx.drawImage(base_image, 60, 390, 40, 69);
+	}
+	pin_b = new Image();
+	pin_b.src = 'includes/img/icon_pin_b.png';
+	pin_b.onload = function(){
+		ctx.drawImage(pin_b, 565, 540, 40, 69);
+	}
 }
 
 function drawRoomToStairs(endFloor){
@@ -83,6 +92,11 @@ function drawRoomToStairs(endFloor){
 	ctx.fillText('To Floor '+endFloor, 160,579);
 	ctx.font="36px Arial";
 	ctx.fillText('Find the stairs then go to Floor ' + endFloor, 2,40);
+	base_image = new Image();
+	base_image.src = 'includes/img/icon_pin_a.png';
+	base_image.onload = function(){
+		ctx.drawImage(base_image, 60, 390, 40, 69);
+	}
 }
 
 function drawStairsToRoom(startFloor){
@@ -100,10 +114,15 @@ function drawStairsToRoom(startFloor){
 	ctx.lineTo(110,558);
 	ctx.lineTo(110,640);
 	ctx.lineTo(318,640);
-	ctx.lineTo(318,620);
+	ctx.lineTo(318,610);
 	ctx.stroke();
 	ctx.font="24px Arial";
 	ctx.fillText('From Floor '+startFloor, 160, 579);
+	base_image = new Image();
+	base_image.src = 'includes/img/icon_pin_b.png';
+	base_image.onload = function(){
+		ctx.drawImage(base_image, 300, 540, 40, 69);
+	}
 }
 
 function drawStartPoint(){
