@@ -25,7 +25,7 @@ var goalFloor = 0;
 var activeSearch = '';
 var startError = false;
 var endError = false;
-
+var clear = false;
 // Global Functions
 function getUrlVars() {
     var vars = {};
@@ -51,7 +51,7 @@ function drawRoomToRoom(){
 	}
 	c.width = c.width; // clears prior drawings
 	var ctx = c.getContext("2d");
-	ctx.strokeStyle="#FF0000";
+	ctx.strokeStyle="#0000FF";
 	ctx.beginPath();
 	ctx.lineCap="round";
 	ctx.lineWidth=10;
@@ -79,7 +79,7 @@ function drawRoomToStairs(endFloor){
 	}
 	c.width = c.width; // clears prior drawings
 	var ctx = c.getContext("2d");
-	ctx.strokeStyle="#FF0000";
+	ctx.strokeStyle="#0000FF";
 	ctx.beginPath();
 	ctx.lineCap="round";
 	ctx.lineWidth=10;
@@ -106,7 +106,7 @@ function drawStairsToRoom(startFloor){
 	}
 	c.width = c.width; // clears prior drawings
 	var ctx = c.getContext("2d");
-	ctx.strokeStyle="#FF0000";
+	ctx.strokeStyle="#0000FF";
 	ctx.beginPath();
 	ctx.lineCap="round";
 	ctx.lineWidth=10;
@@ -132,7 +132,7 @@ function drawStartPoint(){
 	}
 	c.width = c.width;
 	var ctx = c.getContext("2d");
-	ctx.strokeStyle="#FF0000";
+	ctx.strokeStyle="#0000FF";
 	ctx.beginPath();
 	ctx.lineCap="round";
 	ctx.lineWidth=20;
@@ -148,7 +148,7 @@ function drawEndPoint(){
 	}
 	c.width = c.width;
 	var ctx = c.getContext("2d");
-	ctx.strokeStyle="#FF0000";
+	ctx.strokeStyle="#0000FF";
 	ctx.beginPath();
 	ctx.lineCap="round";
 	ctx.lineWidth=20;
@@ -274,44 +274,43 @@ function clearCanvas(){
 	$('#getDir').click(function(e){
 		if(endError || startError){
 			e.preventDefault();
+			console.log("gross");
 		}
+		console.log("hi");
 	})
 
  	$(".floor").click(function(){
- 		floor = $(this).text();
- 		selectFloor(floor);
- 		if((startingFloor != 0) && (goalFloor != 0)){
- 			if(floor == startingFloor){
- 				if(startingFloor == goalFloor){
- 					drawRoomToRoom();
- 				}
- 				else{
- 					drawRoomToStairs(goalFloor);
- 				}
- 			}
- 			else if(floor == goalFloor){
- 				drawStairsToRoom(startingFloor);
- 			}
-			else{
-				clearCanvas();
+			floor = $(this).text();
+			selectFloor(floor);
+			if(!clear){
+				if((startingFloor != 0) && (goalFloor != 0)){
+					if(floor == startingFloor){
+						drawRoomToStairs(goalFloor);
+					}
+					else if(floor == goalFloor){
+						drawStairsToRoom(startingFloor);
+					}
+					else{
+						clearCanvas();
+					}
+				}
+				else if(startingFloor != 0){
+					if(floor == startingFloor){
+						drawStartPoint();
+					}
+					else{
+						clearCanvas();
+					}
+				}
+				else if(goalFloor != 0){
+					if(floor == goalFloor){
+						drawEndPoint();
+					}
+					else{
+						clearCanvas();
+					}
+				}
 			}
- 		}
- 		else if(startingFloor != 0){
- 			if(floor == startingFloor){
- 				drawStartPoint();
- 			}
-			else{
-				clearCanvas();
-			}
- 		}
- 		else if(goalFloor != 0){
- 			if(floor == goalFloor){
- 				drawEndPoint();
- 			}
- 			else{
- 				clearCanvas();
- 			}
- 		}
  	});
 
  	// $(".iconButt").click(function(){
@@ -421,4 +420,7 @@ $(".exita").click(function(){
 
  });
 
-
+ function setClear(){
+ clear = true;
+ clearCanvas();
+}
