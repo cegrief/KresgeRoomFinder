@@ -90,8 +90,8 @@ function drawRoomToStairs(endFloor){
 	ctx.stroke();
 	ctx.font="24px Arial";
 	ctx.fillText('To Floor '+endFloor, 160,579);
-	ctx.font="36px Arial";
-	ctx.fillText('Find the stairs then go to Floor ' + endFloor, 2,40);
+	ctx.font="30px Arial";
+	ctx.fillText('Find the stairs then go to Floor ' + endFloor, 50,85);
 	base_image = new Image();
 	base_image.src = 'includes/img/icon_pin_a.png';
 	base_image.onload = function(){
@@ -169,13 +169,13 @@ function floorText(){
 	ctx.font="30px Arial";
 	if(clear == false){
 		if(start!='' && end!=''){
-			ctx.fillText('From room ' + start + ' to room ' + end, 5, 895);
+			ctx.fillText('From room ' + start + ' to room ' + end, 50, 40);
 		}
 		else if(start!=''){
-			ctx.fillText('Starting room: ' + start, 5, 895);
+			ctx.fillText('Starting room: ' + start, 50, 40);
 		}
 		else if(end!=''){
-			ctx.fillText('Destination: ' + end, 5, 895);
+			ctx.fillText('Destination: ' + end, 50, 40);
 		}
 	}
 }
