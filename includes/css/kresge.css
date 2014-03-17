@@ -99,3 +99,13 @@ button.text-left{
 margin-left:10px;
 }
 
+.clrbtn{
+	float:right;
+	text-align:right;
+	padding-right:10px;
+}
+
+#navbartop{
+	float:left;
+	padding-left:10px;
+}
