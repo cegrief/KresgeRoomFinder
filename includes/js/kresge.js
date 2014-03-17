@@ -156,6 +156,30 @@ function drawEndPoint(){
 	ctx.lineTo(328,620);
 	ctx.stroke();
 }
+
+function floorText(){
+	var c = document.getElementById("map");
+	if(c==null){
+		return;
+	}
+	var gets = getUrlVars();
+	start = gets['startingroom'];
+	end = gets['endingroom'];
+	var ctx = c.getContext("2d");
+	ctx.font="30px Arial";
+	if(clear == false){
+		if(start!='' && end!=''){
+			ctx.fillText('From room ' + start + ' to room ' + end, 5, 895);
+		}
+		else if(start!=''){
+			ctx.fillText('Starting room: ' + start, 5, 895);
+		}
+		else if(end!=''){
+			ctx.fillText('Destination: ' + end, 5, 895);
+		}
+	}
+}
+
 function selectFloor(floor){
 	$(".currFloor").toggleClass("active btn-primary btn-link currFloor");
 	$("#floor"+floor).toggleClass("active btn-primary btn-link currFloor");
@@ -169,6 +193,7 @@ function clearCanvas(){
 		return;
 	}
 	c.width=c.width;
+	floorText();
 }
 
  $(document).ready(function() {
@@ -286,9 +311,11 @@ function clearCanvas(){
 				if((startingFloor != 0) && (goalFloor != 0)){
 					if(floor == startingFloor){
 						drawRoomToStairs(goalFloor);
+						floorText();
 					}
 					else if(floor == goalFloor){
 						drawStairsToRoom(startingFloor);
+						floorText();
 					}
 					else{
 						clearCanvas();
@@ -297,6 +324,7 @@ function clearCanvas(){
 				else if(startingFloor != 0){
 					if(floor == startingFloor){
 						drawStartPoint();
+						floorText();
 					}
 					else{
 						clearCanvas();
@@ -305,6 +333,7 @@ function clearCanvas(){
 				else if(goalFloor != 0){
 					if(floor == goalFloor){
 						drawEndPoint();
+						floorText();
 					}
 					else{
 						clearCanvas();
@@ -375,19 +404,23 @@ $(".exita").click(function(){
 		// we should draw a map from room to room
 		selectFloor(startingFloor);
 		drawRoomToRoom();
+		floorText();
 	}
 	else if((startingFloor != 0) && (goalFloor != 0)){
 		// need to go to starting floor and draw map to the stairs
 		selectFloor(startingFloor);
 		drawRoomToStairs(goalFloor);
+		floorText();
 	}
 	else if(startingFloor != 0){
 		selectFloor(startingFloor);
 		drawStartPoint();
+		floorText();
 	}
 	else if(goalFloor != 0){
 		selectFloor(goalFloor);
 		drawEndPoint();
+		floorText();
 	}
 
 	resizeMap();
