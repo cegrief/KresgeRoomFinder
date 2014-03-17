@@ -241,6 +241,7 @@ function clearCanvas(){
 				$('#endingroom-group').addClass('has-error');
 				$('#endingroom-group').removeClass('has-success');
 				$('#endingroom-help').text('Not a valid room number!');
+
 				endError = true;
 			}
 			else{
